@@ -25,6 +25,7 @@ while True:
       timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
       x.execute("""INSERT IGNORE INTO articles VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""", (obj['id'], obj['creationDate'], obj['lastUpdate'], obj['header'], obj['price'], obj['shortDescription'], obj['ad_link'], obj['zipcode'], obj['city'], obj['imageSrc'], obj['location'], timestamp))
       conn.commit()
+#debug stuff
 #      print obj['id']
     conn.close()
   except IOError:
@@ -35,4 +36,5 @@ while True:
     pass
   except:
     pass
+  #random timer between each check
   time.sleep(randint(18, 22)) 
